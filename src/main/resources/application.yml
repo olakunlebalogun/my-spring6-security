@@ -1,0 +1,26 @@
+server:
+  port: 32000
+
+spring:
+  application:
+    name: "Security by Amigos"
+  datasource:
+    username: root
+    password: ola24oluwa
+    url: jdbc:mysql://localhost:3306/security
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        show_sql: true
+        format_sql: true
+    defer-datasource-initialization: true
+    database-platform: mysql
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
