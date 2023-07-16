@@ -1,1 +1,1 @@
-INSERT INTO student(first_name, last_name) VALUES ("Wiley", "Tim");
+# INSERT INTO student(first_name, last_name) VALUES ("Wiley", "Tim");
