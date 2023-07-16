@@ -21,18 +21,21 @@ public class AppSecurityConfig {
         UserDetails userStudent = User.builder()
                 .username("William")
                 .password(passwordEncoder().encode("bright"))
-                .roles(ApplicationUserRole.STUDENT.name())
+//                .roles(ApplicationUserRole.STUDENT.name())
+                .authorities(ApplicationUserRole.STUDENT.getGrantedAuthorities())
+
                 .build();
         UserDetails userAdmin = User.builder()
                 .username("Olakunle")
                 .password(passwordEncoder().encode("seven"))
-                .roles(ApplicationUserRole.ADMIN.name())
+//                .roles(ApplicationUserRole.ADMIN.name())
+                .authorities(ApplicationUserRole.ADMIN.getGrantedAuthorities())
                 .build();
         UserDetails userTrainee = User.builder()
                 .username("Lawrence")
                 .password(passwordEncoder().encode("zenith"))
-                .roles(ApplicationUserRole.TRAINEE.name())
-//                .authorities(ApplicationUserRole.TRAINEE.getGrantedAuthorities())
+//                .roles(ApplicationUserRole.TRAINEE.name())
+                .authorities(ApplicationUserRole.TRAINEE.getGrantedAuthorities())
                 .build();
         return new InMemoryUserDetailsManager(
                 userStudent,
